@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diario emocional — Helpsy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="app-shell">
+
+        <div id="helpsy-sidebar"></div>
+
+        <main class="contenido">
+
+            <div class="topbar" id="helpsy-topbar"></div>
+
+            <p class="info-modulo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Registra cómo te sientes hoy. Tu psicólogo puede ver esta
+                tendencia para preparar mejor tus sesiones (esto no
+                reemplaza contarle lo que sientes en la cita).
+            </p>
+
+            <!-- RF-38: aviso de que esto no es un servicio de emergencia,
+                 visible también aquí y no solo en el cuestionario inicial. -->
+            <div class="aviso-emergencia">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div>
+                    <strong>Helpsy no es un servicio de emergencia.</strong>
+                    Si tú o alguien que conoces está en riesgo inmediato, llama a la
+                    <strong>Línea 106</strong> (línea de salud mental, gratuita, 24 horas)
+                    o al <strong>123</strong> en caso de emergencia.
+                </div>
+            </div>
+
+            <div class="campo oculto" id="campo-diario-menor" style="margin-bottom: 16px; max-width: 360px;">
+                <label for="diario-menor">Registrando el estado emocional de</label>
+                <select class="select-simple" id="diario-menor"></select>
+            </div>
+
+            <section class="tarjeta">
+                <div class="tarjeta-encabezado">
+                    <div>
+                        <h2>¿Cómo se siente hoy?</h2>
+                        <p>Elige la opción que más se acerque.</p>
+                    </div>
+                </div>
+
+                <div class="animo-grid" id="animo-grid"></div>
+
+                <div class="campo" style="margin-bottom: 14px;">
+                    <label for="diario-notas">Notas (opcional)</label>
+                    <textarea class="input-simple" id="diario-notas" rows="3" placeholder="¿Qué pasó hoy que influyó en tu ánimo?"></textarea>
+                </div>
+
+                <button class="btn btn-primario" id="btn-guardar-diario">Guardar registro de hoy</button>
+                <p id="aviso-ya-registrado" class="campo-nota oculto"></p>
+            </section>
+
+            <section class="grid-dos" style="margin-top: 16px;">
+
+                <div class="tarjeta">
+                    <div class="tarjeta-encabezado">
+                        <div>
+                            <h2>Tendencia</h2>
+                            <p>Tus últimos registros, del 1 (bajo) al 5 (muy bien).</p>
+                        </div>
+                    </div>
+                    <canvas id="grafico-diario" height="140"></canvas>
+                </div>
+
+                <div class="tarjeta">
+                    <div class="tarjeta-encabezado">
+                        <div>
+                            <h2>Historial</h2>
+                            <p id="contador-diario">Cargando...</p>
+                        </div>
+                    </div>
+                    <div id="lista-diario" style="max-height: 320px; overflow-y: auto;"></div>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/data.js" defer></script>
+    <script src="js/common.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js" defer></script>
+    <script src="js/diario.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Helpsy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="app-shell">
+
+        <div id="helpsy-sidebar"></div>
+
+        <main class="contenido">
+
+            <div class="topbar" id="helpsy-topbar"></div>
+
+            <p class="info-modulo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Vista general del sistema: cuántos usuarios y pacientes hay,
+                cómo está funcionando el servicio y qué tan avanzados van los
+                casos activos. Los números vienen de datos de demostración.
+            </p>
+
+            <section class="stat-grid" id="stat-grid"></section>
+
+            <section class="grid-dos">
+
+                <div class="tarjeta">
+                    <div class="tarjeta-encabezado">
+                        <div>
+                            <h2>Indicadores de desempeño</h2>
+                            <p>Qué tan bien está respondiendo el servicio ahora mismo.</p>
+                        </div>
+                        <a href="indicadores.html" class="btn btn-fantasma btn-sm">Ver indicadores</a>
+                    </div>
+                    <div id="desempeno"></div>
+                </div>
+
+                <div class="tarjeta">
+                    <div class="tarjeta-encabezado">
+                        <div>
+                            <h2>Carga de datos reciente</h2>
+                            <p>Últimos archivos subidos al sistema.</p>
+                        </div>
+                        <a href="carga-datos.html" class="btn btn-fantasma btn-sm">Cargar archivo</a>
+                    </div>
+                    <div id="cargas-recientes"></div>
+                </div>
+
+            </section>
+
+            <section class="tarjeta" style="margin-top: 16px;">
+                <div class="tarjeta-encabezado">
+                    <div>
+                        <h2>Seguimiento de casos</h2>
+                        <p>Estado de avance de los casos abiertos en este momento.</p>
+                    </div>
+                    <a href="seguimiento.html" class="btn btn-fantasma btn-sm">Ver seguimiento completo</a>
+                </div>
+                <div class="stat-grid" id="casos-grid" style="margin-bottom: 0;"></div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/data.js" defer></script>
+    <script src="js/common.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
+
+</body>
+</html>

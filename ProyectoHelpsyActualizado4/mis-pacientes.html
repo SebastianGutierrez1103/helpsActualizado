@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis pacientes — Helpsy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="app-shell">
+
+        <div id="helpsy-sidebar"></div>
+
+        <main class="contenido">
+
+            <div class="topbar" id="helpsy-topbar"></div>
+
+            <p class="info-modulo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Pacientes que te han agendado al menos una cita. Haz clic en
+                "Ver diario" para revisar su tendencia emocional antes de la sesión.
+            </p>
+
+            <section class="tarjeta">
+                <div class="tarjeta-encabezado">
+                    <div>
+                        <h2>Tus pacientes</h2>
+                        <p id="contador-pacientes">Cargando...</p>
+                    </div>
+                </div>
+                <div id="lista-pacientes"></div>
+            </section>
+
+            <section class="tarjeta oculto" id="panel-diario-paciente" style="margin-top: 16px;">
+                <div class="tarjeta-encabezado">
+                    <div>
+                        <h2 id="titulo-diario-paciente">Diario de...</h2>
+                        <p>Últimos registros de estado de ánimo.</p>
+                    </div>
+                    <button class="btn btn-fantasma btn-sm" id="btn-cerrar-diario">Cerrar</button>
+                </div>
+                <div id="contenido-diario-paciente"></div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/data.js" defer></script>
+    <script src="js/common.js" defer></script>
+    <script src="js/mis-pacientes.js" defer></script>
+
+</body>
+</html>
